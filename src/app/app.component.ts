@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'quinta-claseA';
+  flag:boolean=true;
+  
+  onOcultar(){
+    this.flag = !this.flag
+  }
 }
