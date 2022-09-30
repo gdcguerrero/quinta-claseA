@@ -12,11 +12,7 @@ export class PokemonComponent implements OnInit {
   public pokemon$!: Observable<any>
 
   constructor(public pokemonS: RequestService) {
-    this.pokemon$ = pokemonS.getPokemon().pipe(
-      tap(resp => {
-        console.log(resp);
-      })
-      )
+    this.pokemon$ = pokemonS.getPokemon()
   }
 
   ngOnInit(): void {

@@ -4,7 +4,7 @@
         <li>{{stat.stat.name}} : {{stat.base_stat}}</li>
     </ul>
 
-    <ul *ngFor="let sprite of pokemon.sprite">
+    <ul *ngFor="let sprite of pokemon.sprites">
         <li>{{sprite.name}}</li>
         <li><img [src]="sprite.img" style="height: 120px; width: 120px;" alt="not found"></li>
     </ul>

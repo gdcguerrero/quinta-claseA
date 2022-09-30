@@ -86,10 +86,19 @@ export class RequestService {
           //     }
           //   })
           // delete origin['sprites']  -- elimina una key de la respuesta
+
           return {
             //trash: allTrash,
             ...origin,
-            sprite: sprites
+            sprites: sprites
+          }
+        }),
+        map(resp => {
+          console.log(resp);
+          return {
+            name: resp.name,
+            stats: resp.stats,
+            sprites: resp.sprites
           }
         })
     )
