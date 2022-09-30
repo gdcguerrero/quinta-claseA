@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { RequestService } from '../../services/request.service';
 
 @Component({
@@ -12,7 +12,11 @@ export class PokemonComponent implements OnInit {
   public pokemon$!: Observable<any>
 
   constructor(public pokemonS: RequestService) {
-    this.pokemon$ = pokemonS.getPokemon()
+    this.pokemon$ = pokemonS.getPokemon().pipe(
+      tap(resp => {
+        console.log(resp);
+      })
+      )
   }
 
   ngOnInit(): void {
